@@ -1,0 +1,32 @@
+.job-card {
+    width: 33.33%;
+  }
+.my-btn-line{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}  
+
+.my-line {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+    width: 100%;
+  }
+  
+  .bg-color{
+    background-color: #172b4d;
+  }
+
+  .my-form-style{
+    padding: 5%;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter:  blur(100px);
+    
+}
+
+.with-line {
+    border-bottom: 2px solid black; /* Adjust the color and thickness as desired */
+    padding-bottom: 10px; /* Add some padding to space the line from the text */
+  }
+  

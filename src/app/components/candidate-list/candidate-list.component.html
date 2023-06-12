@@ -1,0 +1,77 @@
+<app-banner
+  [subtitle]="bannerSubtitle"
+  [title]="bannerTitle"
+></app-banner>
+
+
+
+<nav class="navbar navbar-expand-lg" style="display: flex;justify-content: center;">
+  <a class="navbar-brand" style="color:rgb(0, 0, 0);">tap here what you want ti find</a>
+  <div id="navbarColor02">
+    <form class="form-inline my-2 my-lg-0">
+      <input type="search" (ngModelChange)="searchTextChanged.next($event)" #key="ngModel" ngModel
+        name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search candidate..." required>
+    </form>
+ </div>
+</nav>
+<div class="container" id="main-container">
+<div class="row">
+  <div *ngFor="let candidate of candidateResults" class="col-md-6 col-xl-6">
+     <div class="card m-b-30">
+        <div class="card-body row">
+           <div class="col-6">
+              <a><img [src]="candidate.imgProfil" alt="" class="img-fluid rounded-circle w-60"></a>
+           </div>
+           <div class="col-6 card-title align-self-center mb-0">
+              <h5>{{candidate?.fullName}}</h5>
+              <p class="m-0">{{candidate?.status}}</p>
+           </div>
+        </div>
+        <ul class="list-group list-group-flush">
+           <li class="list-group-item"><i class="fa fa-envelope float-right"></i>score: {{candidate?.score}}</li>
+           <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : {{candidate?.phone}}</li>
+        </ul>
+        <div class="card-body">
+           <div class="float-right btn-group btn-group-sm">
+            <button class="btn btn-icon btn-sm btn-primary ml-auto" type="button" [routerLink]="['/candidate-profile', candidate.id]">
+              <span class="btn-inner--icon"><i class="ni ni-briefcase-24">  check profil</i></span>
+            </button>
+              <a (click)="onOpenModal(candidate, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-times"></i></a>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deletecandidateModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+     <div class="modal-content">
+        <div class="modal-header">
+           <h5 class="modal-title" id="deleteModelLabel">Delete Candidate</h5>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+           </button>
+        </div>
+        <div class="modal-body">
+           <p>Are you sure you want to delete employee {{deleteCandidate?.fullName}} ?</p>
+           <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+              <button (click)="onDeleteCandidate(deleteCandidate.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+</div>
+
+<!-- Notification for no candidates -->
+<div *ngIf="candidateResults.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+<div class="alert alert-info" role="alert">
+  <h4 class="alert-heading">NO CANDIDATES!</h4>
+  <p>No andidates were found.</p>
+</div>
+</div>
+
+
+

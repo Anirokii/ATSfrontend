@@ -1,0 +1,153 @@
+.my-btn {
+    // Set the position of the underline
+    position: relative;
+    // Set the default style for the underline
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background-color: #525f7f;
+      transition: width 0.5s ease-in-out;
+    }
+    // When the cursor is over the button, increase the width of the underline
+    &:hover {
+      &:after {
+        width: 90%;
+      }
+      font-size: 18px;
+    }
+  }
+
+  .my-li {
+    // Set the position of the underline
+    position: relative;
+    // Set the default style for the underline
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background-color: #525f7f;
+      transition: width 0.3s ease-in-out;
+    }
+    // When the cursor is over the button, increase the width of the underline
+    &:hover {
+      &:after {
+        width: 15%;
+      }
+    }
+  }
+
+  .my-line {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .footer_area {
+    a {
+      color: #333; /* Default color */
+      transition: color 0.3s ease-in-out; /* Add a transition effect */
+    }
+    
+    a:hover {
+      color: #5e72e4; /* Change the color to primary */
+    }
+  }
+
+
+  .footer_area {
+    a {
+      color: #333; /* Default color */
+      transition: color 0.3s ease-in-out; /* Add a transition effect */
+    }
+    
+    a:hover {
+      color: #5e72e4; /* Change the color to primary */
+    }
+  }
+  
+  
+  
+
+  .social-icons-wrapper {
+    text-align: left;
+  
+    .social-icons {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+  
+      li {
+        display: inline-block;
+        margin: 0 10px;
+  
+        a {
+          display: block;
+          width: 40px;
+          height: 30px;
+          border-radius: 20%;
+          background-color: #fff;
+          transition: all 0.3s ease;
+          position: relative;
+  
+          &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          }
+  
+          .btn-inner--icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+  
+            img {
+              max-width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+  .footer_bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  
+    .f_menu {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+  
+      li {
+        display: inline-block;
+  
+        &:not(:last-child)::after {
+          content: "|";
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+  
+
+.my-footer-font{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 80;
+    color: #000;
+}
+  
+  
+  
+  

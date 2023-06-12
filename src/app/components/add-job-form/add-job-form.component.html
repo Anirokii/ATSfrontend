@@ -1,0 +1,208 @@
+    <div class="my-btn-line">
+        <button
+        class="btn btn-icon btn-3 btn-primary"
+        data-target="#modal-form"
+        (click)="modalform.show()"
+        type="button"
+        >
+        <span class="btn-inner--text">NEW JOB</span>
+        </button>
+
+        <div
+        aria-hidden="true"
+        aria-labelledby="modal-form"
+        class="modal fade"
+        bsModal
+        #modalform="bs-modal"
+        id="modal-form"
+        role="dialog"
+        tabindex="-1"
+        >
+        <div
+            class="modal-dialog modal-dialog-centered"
+            role="document"
+        >
+            <div class="modal-content">
+            <div class="modal-body p-0">
+                <form
+                class="my-form-style"
+                #jobForm="ngForm"
+                (ngSubmit)="onAddJob(jobForm)"
+                >
+                <h1 class="text-center font-weight-bold with-line">
+                    create a job opportunity
+                </h1>
+
+                <div class="form-group">
+                    <label for="job-title">Job Title</label>
+                    <input
+                    type="text"
+                    id="job-title"
+                    name="jobTitle"
+                    [(ngModel)]="newJob.jobTitle"
+                    class="form-control"
+                    />
+                </div>
+                <div [ngStyle]="{ display: 'flex' }">
+                    <div
+                    class="form-group"
+                    [ngStyle]="{ 'margin-right': '2%', width :'50%' }"
+                    >
+                    <label for="department">Department</label>
+                    <input
+                        type="text"
+                        id="department"
+                        name="department"
+                        [(ngModel)]="newJob.department"
+                        class="form-control"
+                    />
+                    </div>
+
+                    <div class="form-group" [ngStyle]="{ width: '50%' }">
+                        <label for="location">Location</label>
+                        <select id="location" name="location" [(ngModel)]="newJob.location" class="form-control">
+                          <option value="">Select a location</option>
+                          <option value="New York">New York</option>
+                          <option value="London">London</option>
+                          <option value="Tokyo">Tokyo</option>
+                        </select>
+                    </div>
+                      
+                </div>
+                
+                <div [ngStyle]="{ display: 'flex' }">
+                <div class="form-group" [ngStyle]="{ 'margin-right': '2%', width :'50%' }">
+                    <label for="salary">salary</label>
+                    <input
+                        type="number"
+                        id="salary"
+                        name="salary"
+                        [(ngModel)]="newJob.salary"
+                        class="form-control"
+                    />
+                </div>
+
+                <div class="form-group" [ngStyle]="{ width: '50%' }">
+                    <label for="jobType">Job Type</label>
+                    <select id="jobType" name="jobType" [(ngModel)]="newJob.jobType" class="form-control">
+                      <option value="">Select a location</option>
+                      <option value="FULL_TIME">full time</option>
+                      <option value="PART_TIME">part time</option>
+                      <option value="FREELANCE">freelance</option>
+                      <option value="REMOTE">remote</option>
+                    </select>
+                </div>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="salary-range">Salary Range</label>
+                    <ng5-slider [(ngModel)]="sliderValue" [options]="sliderOptions"></ng5-slider>
+
+                    <input
+                    type="range"
+                    [ngStyle]="{ width: '326.5px' }"
+                    id="salary-range"
+                    name="salaryRange"
+                    [(ngModel)]="salaryRange"
+                    min="0"
+                    max="200000"
+                    step="1000"
+                    class="form-control"
+                    />
+                    <span>{{ salaryRange | currency }}</span>
+                </div> -->
+                <!-- <div class="form-group">
+                    <label for="salary-range">Salary Range</label>
+                    <ng5-slider [(ngModel)]="sliderValue" [options]="sliderOptions"></ng5-slider>
+                  
+                    <input
+                      type="range"
+                      [ngStyle]="{ width: '326.5px' }"
+                      id="salary-range"
+                      name="salaryRange"
+                      [(ngModel)]="formSalaryRange"
+                      min="0"
+                      max="200000"
+                      step="1000"
+                      class="form-control"
+                    />
+                    <span>{{ formSalaryRange | currency }}</span> 
+                </div> -->
+                  
+                  
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea
+                    [ngStyle]="{
+                        width: '100%',
+                        height: '102.5px'
+                    }"
+                    id="description"
+                    name="description"
+                    [(ngModel)]="newJob.description"
+                    class="form-control"
+                    ></textarea>
+                </div>
+
+                <div
+                    id="tags-component"
+                    class="tab-pane tab-example-result fade show active"
+                    role="tabpanel"
+                    aria-labelledby="tags-component-tab"
+                >
+                    <label for="Skills">Skills Required</label>
+                    <input
+                    #badgesInput
+                    id="badges"
+                    value="Add Skills" 
+                    type="text"
+                    placeholder="+ Add"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="experience-required" class="custom-toggle">
+                    <input
+                        type="checkbox"
+                        [(ngModel)]="experienceRequired"
+                        name="experienceRequired"
+                        id="experience-required"
+                        (change)="onExperienceRequiredChange()"
+                    />
+                    <span
+                        class="custom-toggle-slider rounded-circle mr-3 mt-4" 
+                    ></span>
+                    
+                    </label>
+                    <label class="mt-4 ml-3" for="experience-required">Experience Required</label>
+                    
+                </div>
+
+                <div class="form-group" *ngIf="experienceRequired">
+                    <label for="experience-slider"
+                    >Years of Experience</label
+                    >
+                    <input
+                    [ngStyle]="{ width: '100%' }"
+                    type="range"
+                    id="experience-slider"
+                    name="yearsOfExperience"
+                    [(ngModel)]="newJob.experienceRequired"
+                    min="0"
+                    max="20"
+                    step="1"
+                    class="form-control"
+                    />
+                    <span>{{ newJob.experienceRequired }} years</span>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                </div>
+                </form>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>

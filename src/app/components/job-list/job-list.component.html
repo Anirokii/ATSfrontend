@@ -1,0 +1,115 @@
+<div class="row bg-color" [ngStyle]="{'margin': '10px'}">
+    <div class="col-md-2">
+        <div class="card card-blog">
+            <div class="card-header bg-primary"  data-header="skew">
+                <div class="card-image">
+                    <img class="img rounded" src="assets/img/ill/p22.png" />
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="my-btn-line">
+                    <button class="btn btn-icon btn-3 btn-primary" type="button">
+                        <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
+                        <span class="btn-inner--text">Add New Job</span>
+                    </button>
+                </div>
+                
+                <hr class="my-line">
+
+                <div>
+                    <span class="text-default mb-4">
+                        Job status
+                    </span>
+                    <br/>
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio1">active</label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio1">published</label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio1">closed</label>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="text-default mb-4">
+                    Department
+                    </span>
+                    <select class="form-control form-control-sm">
+                        <option>select department</option>
+                    </select>
+                </div>
+
+                <div>
+                    <span class="text-default mb-4">
+                    Location
+                    </span>
+                    <select class="form-control form-control-sm">
+                        <option>select Location</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active" aria-current="page">Jobs</li>   
+            </ol>
+        </nav>
+
+        <div class="card job-card">
+            <div class="card-body">
+                <div class="row">
+                    <h6 class="card-category">
+                        <i class="ni ni-tag col-md-1"></i>
+                    </h6>
+                    <div id="bootstrap-switch-component" class="tab-pane tab-example-result fade show active col-md-2" role="tabpanel" aria-labelledby="bootstrap-switch-component-tab">
+                        <label class="custom-toggle">
+                        <input type="checkbox" checked="" />
+                        <span class="custom-toggle-slider rounded-circle" data-label-off="OFF" data-label-on="ON"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <h2 class="card-title">Job title</h2>
+                <h5 class="card-subtitle mb-2 text-muted">job department - skills - location </h5>
+                
+                <div class="table-responsive">
+                    <table class="table table-borderless mb-3 table-sm">
+                      <thead>
+                        <tr>
+                          <th scope="col" class="form-label">Number of candidates applied</th>
+                          <th scope="col" class="form-label">Job ID</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><h3>80</h3></td> <!-- row to show information from backend -->
+                          <td><h3>88160</h3></td> <!-- row to show information from backend -->
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  
+
+                <div class="card-footer d-flex justify-content-end align-items-center">
+                    <button class="btn btn-icon btn-sm btn-primary ml-auto" type="button">
+                        <span class="btn-inner--icon" ><i class="ni ni-bag-17"></i></span>
+                        <span class="btn-inner--text">Publish</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+         
+          
+    </div>
+    
+</div>

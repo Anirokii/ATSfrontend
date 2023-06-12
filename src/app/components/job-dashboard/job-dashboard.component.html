@@ -1,0 +1,58 @@
+<app-banner
+            [subtitle]="bannerSubtitle"
+            [title]="bannerTitle"
+></app-banner>
+
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-6" *ngFor="let item of [0, 1, 2, 3, 4, 5]; let i = index">
+      <div class="card" [ngClass]="{ 'green-bg': item === 4, 'red-bg': item === 5 }">
+        <div class="card-header bg-transparent mt-2">
+          <div class="float-left">
+            <i class="ni ni-building d-inline text-info mr-1"> </i>
+            <p class="d-inline">{{ jobStatus[item] }}</p>
+          </div>
+          <div class="float-right">
+            <div class="dropdown" dropdown>
+              <button
+                aria-expanded="false"
+                class="btn btn-link btn-sm"
+                data-toggle="dropdown"
+                dropdownToggle
+                type="button"
+              >
+                <i class="ni ni-bullet-list-67"> </i>
+              </button>
+              <div
+                class="dropdown-menu dropdown-menu-right"
+                *dropdownMenu
+                x-placement="bottom-end"
+              >
+                <a class="dropdown-item" href="javascript:;">
+                  Edit
+                </a>
+                <a class="dropdown-item" href="javascript:;">
+                  Remove
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body text-center p-4">
+          <div class="single-job-items mb-30" *ngFor="let item of [1, 2, 3, 4, 5]; let i = index">
+            <app-candidate-listing-v2
+                [imageUrl]="'../../assets/img/comment/comment_1.png'"
+                [userName]="'Emilly Blunt'"
+                [userLink]="'#'"
+                [commentDate]="'December 4, 2017'"
+                [commentText]="'score: 500'"
+            ></app-candidate-listing-v2>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

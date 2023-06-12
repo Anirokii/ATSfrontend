@@ -1,0 +1,33 @@
+<div class="comments-area"> 
+    <div class="comment-list">
+       <div class="single-comment justify-content-between d-flex">
+          <div class="user justify-content-between d-flex">
+             <div class="thumb">
+                <img [src]="imageUrl" alt="">
+             </div>
+            <div class="desc">
+                
+                <div class="d-flex justify-content-between">
+                   <div class="d-flex align-items-center">
+                      <h5>
+                         <a routerLink="/candidate-profile">{{ userName }}</a>
+                      </h5>
+                      <p class="date">{{ commentDate }}</p>
+                   </div>
+                   <div class="apply-btn2">
+                      <a href="#" class="btn-reply text-primary text-uppercase">Next</a>
+                      <a href="#" class="btn-reply Small">REJECT</a>
+                   </div>
+                </div>
+                <p class="comment">
+                    {{ commentText }}
+                </p>
+            </div>
+          </div>
+       </div>
+    </div>
+</div>
+    
+
+
+  
